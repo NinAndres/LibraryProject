@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  outline: none;
+  color: #f5f5f5;
+  cursor: pointer;
+  background-color: #555;
+}
+
+.sidebar button:hover {
+  background-color: #777;
+}
+
+.content {
+  margin-left: 200px;
+  padding: 16px;
+}
+
+.content label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.content input {
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+}
+
+#genero-content {
+  margin-top: 10px;
+}
+
+#edition-content {
+  margin-top: 10px;
+}
+
+.content button {
+  text-align: center;
+  margin-top: 10px;
+  color: #f5f5f5;
+  border: none;
+  cursor: pointer;
+  background-color: #555;
+  padding: 10px;
+  border-radius: 10px;
+  display: block;
+  width: 14%;
+
+}
+
+.content button:hover {
+  background-color: #777;
+}
+
+#acervoTable {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#acervoTable th,
+#acervoTable td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+#acervoTable th {
+  background-color: #f2f2f2;
+}
+
+#acervoTable tr {
+  border-bottom: 2px solid #dddddd;
+}
+
+#acervoTable thead tr {
+  background-color: #f5f5f5;
+}
+
+#acervoTable tbody tr {
+  margin-bottom: 5px;
+}

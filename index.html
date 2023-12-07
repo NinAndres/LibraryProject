@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <button id="addItemBtn" onclick="showOption('add-item')">
+        Adicionar livros
+      </button>
+      <button id="listarBtn" onclick="listarAcervo()">Listar Acervo</button>
+      <button id="addUserBtn" onclick="showOption('add-user')">
+        Adicionar Usuário
+      </button>
+      <button id="loanItemBtn" onclick="showOption('loan-item')">
+        Emprestar livros
+      </button>
+      <button id="backItemBtn" onclick="showOption('back-item')">
+        Devolver livros
+      </button>
+    </div>
+    <div class="content" id="content-add-item">
+      <header>
+        <h1>Biblioteca - Adicionar livros</h1>
+      </header>
+      <form id="addItemForm">
+        <label for="itemTitle">Título</label>
+        <input type="text" id="itemTitle" required />
+
+        <label for="itemAuthor">Autor</label>
+        <input type="text" id="itemAuthor" required />
+
+        <label for="itemYear">Ano de Publicação</label>
+        <input type="date" id="itemYear" required />
+
+        <label for="itemCode">Código</label>
+        <input type="text" id="itemCode" required />
+
+        <label for="itemType">Tipo</label>
+        <select id="itemType">
+          <option value="Livro">Livro</option>
+          <option value="Revista">Revista</option>
+        </select>
+
+        <div id="genero-content" style="display: none">
+          <label for="itemGenre">Gênero do Livro</label>
+          <select id="itemGenre">
+            <option value="FANTASIA">Fantasia</option>
+            <option value="DRAMA">Drama</option>
+            <option value="INFANTIL">Infantil</option>
+            <option value="SUSPENSE">Suspense</option>
+            <option value="TERROR">Terror</option>
+            <option value="COMÉDIA">Comédia</option>
+            <option value="FICÇÃO">Ficção</option>
+          </select>
+        </div>
+        <div id="edition-content" style="display: none">
+          <label for="itemEdition">Edição da Revista</label>
+          <input type="text" id="itemEdition" />
+        </div>
+
+        <button type="submit">Adicionar Item</button>
+      </form>
+    </div>
+    <div class="content" id="content-acervo-list" style="display: none">
+      <header>
+        <h1>Biblioteca - Acervo</h1>
+      </header>
+      <table id="acervoTable">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Título</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="acervoList"></tbody>
+      </table>
+    </div>
+    <div class="content" id="content-loan-item" style="display: none">
+      <header>
+        <h1>Biblioteca - Emprestar livro</h1>
+      </header>
+      <label for="itemCodeLoan">Código do Livro</label>
+      <input type="text" id="itemCodeLoan" required />
+
+      <label for="userRegistrationLoan">Registro Acadêmico</label>
+      <input type="text" id="userRegistrationLoan" required />
+
+      <button onclick="emprestarItem()">Emprestar livro</button>
+    </div>
+
+    <div class="content" id="content-back-item" style="display: none">
+      <header>
+        <h1>Biblioteca - Devolver livro</h1>
+      </header>
+      <label for="itemCodeBack">Código do Livro</label>
+      <input type="text" id="itemCodeBack" required />
+
+      <label for="userRegistrationBack">Registro Acadêmico</label>
+      <input type="text" id="userRegistrationBack" required />
+
+      <button onclick="devolverItem()">Devolver livro</button>
+    </div>
+
+    <div class="content" id="content-add-user" style="display: none">
+      <header>
+        <h1>Biblioteca - Adicionar Usuário</h1>
+      </header>
+      <form id="addUserForm">
+        <label for="userName">Nome do Usuário</label>
+        <input type="text" id="userName" required />
+
+        <label for="userRegistration">Registro Acadêmico</label>
+        <input type="text" id="userRegistration" required />
+
+        <label for="userBirthdate">Data de Nascimento</label>
+        <input type="date" id="userBirthdate" required />
+
+        <button type="button" onclick="adicionarUsuario()">
+          Adicionar Usuário
+        </button>
+      </form>
+
+      <ul id="userList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
